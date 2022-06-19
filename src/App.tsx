@@ -64,29 +64,18 @@ function App() {
               && mask[i] !== Mask.Transparent),
       [field, mask]);
 
-  const setEasy = () => {
-      setSize(8)
-      setField(CreateField(8))
-      setMask(new Array(8*8).fill(Mask.Fill))
+  const setDifficulty = (hard: number) => {
+      setSize(hard)
+      setField(CreateField(hard))
+      setMask(new Array(hard*hard).fill(Mask.Fill))
   }
-  const setMedium = () => {
-      setSize(10);
-      setField(CreateField(10))
-      setMask(new Array(10*10).fill(Mask.Fill))
-  }
-  const setHard = () => {
-      setSize(15);
-      setField(CreateField(15))
-      setMask(new Array(15*15).fill(Mask.Fill))
-  }
-
 
   return (
     <div>
       <div className="ButtonPos">
-        <MyButton onClick={() => setEasy()}>EASY</MyButton>
-        <MyButton onClick={() => setMedium()}>MEDIUM</MyButton>
-        <MyButton onClick={() => setHard()}>HARD</MyButton>
+        <MyButton onClick={() => setDifficulty(8)}>EASY</MyButton>
+        <MyButton onClick={() => setDifficulty(10)}>MEDIUM</MyButton>
+        <MyButton onClick={() => setDifficulty(15)}>HARD</MyButton>
       </div>
       <div className="App">
       <div className="Game">
@@ -99,7 +88,7 @@ function App() {
                     className="FieldsX"
                     key={x}
                     style={{
-                      backgroundColor: death ? "#FAA" : win ? "#FFB" : "#BEB",
+                      backgroundColor: death ? "#ffaaaa" : win ? "#ffffbb" : "#bbeebb",
                     }}
                     onClick={() => {
                       if(win || death) return;
