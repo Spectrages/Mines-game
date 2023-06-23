@@ -81,7 +81,7 @@ function App() {
 
           {dimension.map((_, y) => {
             return (
-              <div key={y} style={{ display: "flex" }}>
+              <div key={y} style={{ display: "flex", cursor: "pointer" }}>
                 {dimension.map((_, x) => {
                   return (
                     <div
@@ -89,6 +89,7 @@ function App() {
                       key={x}
                       style={{
                         backgroundColor: death ? "#ffaaaa" : win ? "#ffffbb" : "#bbeebb",
+                        cursor: "pointer",
                       }}
                       onClick={() => {
                         if (win || death) return;

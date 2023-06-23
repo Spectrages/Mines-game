@@ -5,4 +5,5 @@
     border: 1px solid green;
     font-size: 30px;
     border-radius: 3px;
+    cursor: pointer;
 }
