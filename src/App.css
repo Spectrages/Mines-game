@@ -9,6 +9,7 @@
   position: absolute;
   border: 6px solid aliceblue;
 }
+
 .FieldsX{
   display: flex;
   justify-content: center;
